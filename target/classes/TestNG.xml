@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="New Framework">
+	<parameter name="propertyFile" value="config.properties" />
+	<listeners>
+		<listener class-name="com.qa.test.extentReportListener.ExtentReporterNG" />
+	</listeners>
+	
+	<test name="WWEUI" preserve-order="true">
+		<classes>
+			<class name="com.qa.test.testcases.LoginPageTest" />
+		</classes>
+	</test>
+</suite>
