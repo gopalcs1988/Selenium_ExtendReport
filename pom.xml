@@ -35,7 +35,7 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>src/main/resources/TestNG.xml</suiteXmlFile>
 					</suiteXmlFiles>
-				</configuration> 
+				</configuration>
 			</plugin>
 
 		</plugins>
@@ -66,6 +66,17 @@
 			<artifactId>extentreports</artifactId>
 			<version>2.41.2</version>
 		</dependency>
+		<dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.13.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.13.3</version>
+        </dependency>
 
 	</dependencies>
 </project>

@@ -18,13 +18,16 @@ public class LoginPageTest extends TestBase{
 	
 	@BeforeClass
 	public void setup() {
+		log.info("Initialization method calls to initiate the driver");
 		loginPage = new LoginPage();
 		Initialization();
+		log.info("Access the login page");
 		BrowserInteractions.navigateToURL(prop.getProperty("url"));
 	}
 	
 	@Test(priority = 1)
 	public void login() throws Exception	{
+		log.info("Login Module called");
 		loginPage.login();
 	}
 }
