@@ -13,7 +13,7 @@ public class LoginPageTest extends TestBase{
 	LoginPage loginPage;
 	
 	public LoginPageTest(){
-		super();		
+		super();
 	}
 	
 	@BeforeClass

@@ -1,0 +1,8 @@
+com\qa\test\pages\LoginPage.class
+com\qa\test\extentReportListener\ExtentReporterNG.class
+com\qa\test\utils\TestCleanUp.class
+com\qa\test\utils\BrowserUtils.class
+com\qa\test\base\TestBase.class
+com\qa\test\core\BrowserInteractions$1.class
+com\qa\test\utils\LocatorType.class
+com\qa\test\core\BrowserInteractions.class

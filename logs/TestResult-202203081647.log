@@ -1,0 +1,3 @@
+2022-03-08 16:47:01.486 [main] INFO  com.qa.test.base.TestBase - Initialization method calls to initiate the driver
+2022-03-08 16:47:04.133 [main] INFO  com.qa.test.base.TestBase - Access the login page
+2022-03-08 16:47:13.086 [main] INFO  com.qa.test.base.TestBase - Login Module called

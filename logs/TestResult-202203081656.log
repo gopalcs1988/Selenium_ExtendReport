@@ -1,0 +1,8 @@
+2022-03-08 16:56:09.120 [main] INFO  com.qa.test.base.TestBase - Initialization method calls to initiate the driver
+2022-03-08 16:56:12.961 [main] INFO  com.qa.test.base.TestBase - Access the login page
+2022-03-08 16:56:18.307 [main] INFO  com.qa.test.base.TestBase - Login Module called
+2022-03-08 16:56:18.308 [main] INFO  com.qa.test.base.TestBase - Enter the user name
+2022-03-08 16:56:21.720 [main] INFO  com.qa.test.base.TestBase - Click on the next button to enter the passord
+2022-03-08 16:56:21.775 [main] INFO  com.qa.test.base.TestBase - Check whether password text field is visible
+2022-03-08 16:56:22.333 [main] INFO  com.qa.test.base.TestBase - Enter the password to login into the application
+2022-03-08 16:56:22.399 [main] INFO  com.qa.test.base.TestBase - Click the login button
