@@ -1,0 +1,29 @@
+node {
+
+      stage('Initialise') {
+        /* Checkout the scripts */
+        checkout scm: [
+                $class: 'GitSCM',
+                userRemoteConfigs: [
+                        [
+                                url: "https://github.com/gopalcs1988/Selenium_ExtendReport"
+                        ]
+                ],
+                branches: [[name: "master"]]
+        ], poll: false
+      }
+      
+      stage('Execute Tests') {
+        sh "mvn -Dmaven.test.failure.ignore=true clean test"
+      }
+
+    stage('Publish Results') {
+	publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: '**/Raja.html', reportName: 'HTML Report', reportTitles: ''])
+	 }
+      
+    stage('Email Notification'){
+	
+	emailext body: '', mimeType: 'text/HTML', presendScript: '''def reportPath = build.getWorkspace().child("test-output/emailable-report.html")
+	msg.setContent(reportPath.readToString(), "text/html")''', replyTo: 'rajagopal1988@gmail.com', subject: '', to: 'rajagopal1988@gmail.com'
+     }
+}
