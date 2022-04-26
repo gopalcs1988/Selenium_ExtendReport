@@ -25,13 +25,9 @@ node {
 	publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: '**/Raja.html', reportName: 'HTML Report', reportTitles: ''])
 	 }
 
-stage('TestNG Results')
-	post {
-                // If Maven was able to run the tests, even if some of the test                
-                success {
-                    testNG '**/target/surefire-reports/TEST-*.xml'
-                    
-                }
+stage('TestNG Results') {
+	step([$class: 'Publisher', reportFilenamePattern: '**/target/test-output/testng-results.xml'])
+	
             }
       
     stage('Email Notification'){	
