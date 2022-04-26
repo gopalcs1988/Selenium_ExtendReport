@@ -14,7 +14,11 @@ node {
       }
       
       stage('Execute Tests') {
-        sh "mvn -Dmaven.test.failure.ignore=true clean test"
+         // Run Maven on a Unix agent.
+         // sh "mvn -Dmaven.test.failure.ignore=true clean test"
+
+         // To run Maven on a Windows agent, use
+         bat "mvn -Dmaven.test.failure.ignore=true clean test"
       }
 
     stage('Publish Results') {
