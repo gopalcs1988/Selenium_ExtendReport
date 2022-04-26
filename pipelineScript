@@ -33,10 +33,8 @@ stage('TestNG Results') {
     stage('Email Notification'){	
 	emailext( 
 	subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', 
-	body: '', 
-	mimeType: 'text/HTML', 
-	presendScript: '''def reportPath = '**/target/test-output/emailable-report.html'
-	                  msg.setContent(reportPath.readToString(), "text/html")''', 
+	body: readFile("target/surefire-reports/emailable-report.html"), 
+	mimeType: 'text/HTML', 	
 	replyTo: 'rajagopal1988@gmail.com', 
 	to: 'rajagopal1988@gmail.com')
      }
