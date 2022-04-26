@@ -31,9 +31,16 @@ stage('TestNG Results') {
             }
       
     stage('Email Notification'){	
-	emailext( 
+	emailext(
+	
 	subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', 
-	body: readFile("target/surefire-reports/emailable-report.html"), 
+	body:'''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+	
+	Check the HTML results at $HTML_REPORT
+	
+	Check console output at $CONSOLE to view the results
+	******************** ------------- *******************
+	readFile("target/surefire-reports/emailable-report.html")''', 
 	mimeType: 'text/HTML', 	
 	replyTo: 'rajagopal1988@gmail.com', 
 	to: 'rajagopal1988@gmail.com')
