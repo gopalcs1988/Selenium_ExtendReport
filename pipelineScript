@@ -26,7 +26,7 @@ node {
 	 }
 
 stage('TestNG Results') {
-	step([$class: 'Publisher', reportFilenamePattern: '**/test-output/testng-results.xml'])
+	step([$class: 'Publisher', reportFilenamePattern: '**/target/surefire-reports/testng-results.xml'])
 	
             }
       
