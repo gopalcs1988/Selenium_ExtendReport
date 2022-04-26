@@ -25,9 +25,13 @@ node {
 	publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: '**/Raja.html', reportName: 'HTML Report', reportTitles: ''])
 	 }
       
-    stage('Email Notification'){
-	
-	emailext body: '', mimeType: 'text/HTML', presendScript: '''def reportPath = build.getWorkspace().child("test-output/emailable-report.html")
-	msg.setContent(reportPath.readToString(), "text/html")''', replyTo: 'rajagopal1988@gmail.com', subject: '', to: 'rajagopal1988@gmail.com'
+    stage('Email Notification'){	
+	emailext( 
+	subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', 
+	body: '', 
+	mimeType: 'text/HTML', 
+	presendScript: '''def reportPath = build.getWorkspace().child("test-output/emailable-report.html") msg.setContent(reportPath.readToString(), "text/html")''', 
+	replyTo: 'rajagopal1988@gmail.com', 
+	to: 'rajagopal1988@gmail.com')
      }
 }
