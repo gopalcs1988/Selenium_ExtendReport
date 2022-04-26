@@ -34,7 +34,7 @@ stage('TestNG Results') {
 	emailext(
 	
 	subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', 
-	body: readFile("target/surefire-reports/Raja.html"), 
+	body: readFile("target/surefire-reports/emailable-report.html"), 
 	mimeType: 'text/HTML', 	
 	replyTo: 'rajagopal1988@gmail.com', 
 	to: 'rajagopal1988@gmail.com')
