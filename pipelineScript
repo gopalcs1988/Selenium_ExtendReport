@@ -1,4 +1,5 @@
 node {
+	parameters { choice(name: 'Browser', choices: ['Chrome', 'Firefox', 'Edge'], description: 'Choose the browser to execute the scripts') }
 
       stage('Initialise') {
         /* Checkout the scripts */
@@ -18,7 +19,7 @@ node {
          // sh "mvn -Dmaven.test.failure.ignore=true clean test"
 
          // To run Maven on a Windows agent, use
-         bat "mvn -Dmaven.test.failure.ignore=true clean test"
+         bat "mvn -Dmaven.test.failure.ignore=true clean test -Dbrowser=${params.Browser}"
       }
 
     stage('Publish HTML Results') {
