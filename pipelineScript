@@ -35,7 +35,15 @@ stage('TestNG Results') {
 	emailext(
 	
 	subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', 
-	body: 'HTML Report -  http://localhost:8080/job/UI_Maven_Pipeline/HTML_20Report/' + readFile("target/surefire-reports/emailable-report.html"), 
+	body: 'PROJECT NAME - $PROJECT_NAME'
+	       + '\n' 
+	       + 'Build Number - $BUILD_NUMBER' 
+	       + '\n'
+	       + 'Build Status - $BUILD_STATUS' 
+	       + '\n'
+	       + 'HTML Report -  http://localhost:8080/job/UI_Maven_Pipeline/HTML_20Report/' 
+	       + '\n'
+	       + readFile("target/surefire-reports/emailable-report.html"), 
 	mimeType: 'text/HTML', 	
 	replyTo: 'rajagopal1988@gmail.com', 
 	to: 'rajagopal1988@gmail.com')
