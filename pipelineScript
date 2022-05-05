@@ -36,13 +36,13 @@ stage('TestNG Results') {
 	
 	subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', 
 	body: 'PROJECT NAME - $PROJECT_NAME'
-	       + System.getProperty("line.separator")
+	       + '\r\n'
 	       + 'Build Number - $BUILD_NUMBER' 
-	       + System.getProperty("line.separator")
+	       + '\r\n'
 	       + 'Build Status - $BUILD_STATUS' 
-	       + System.getProperty("line.separator")
+	       + '\r\n'
 	       + 'HTML Report -  http://localhost:8080/job/UI_Maven_Pipeline/HTML_20Report/' 
-	       + System.getProperty("line.separator")
+	       + '\r\n'
 	       + readFile("target/surefire-reports/emailable-report.html"), 
 	mimeType: 'text/HTML', 	
 	replyTo: 'rajagopal1988@gmail.com', 
